@@ -1,689 +1,1292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Animesh Sah</title>
 
-<meta name="description" content="Animesh Sah — Integrated PhD student in observational cosmology at TIFR, Mumbai. Working on Type Ia supernova cosmology, cosmic anisotropy, cosmography, and large-scale structure.">
-<meta property="og:title" content="Animesh Sah — Cosmology">
-<meta property="og:description" content="Integrated PhD student in observational cosmology at TIFR, Mumbai, working on Type Ia supernova cosmology and cosmic anisotropy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<meta name="description" content="Animesh Sah — Ph.D. candidate in observational cosmology at TIFR, Mumbai. Model-independent tests of the standard cosmological model, cosmic anisotropy, Type Ia supernovae, and large-scale structure.">
+<meta property="og:title" content="Animesh Sah — Observational Cosmology">
+<meta property="og:description" content="Ph.D. candidate in observational cosmology at TIFR, Mumbai, working on Type Ia supernova cosmology and cosmic anisotropy.">
 <meta property="og:image" content="https://shin107.github.io/images/banner.jpeg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shin107.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Favicon: minimal supernova / point-source burst in the site accent colour -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23050814'/%3E%3Cg stroke='%2393c5fd' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='28' y2='16'/%3E%3Cline x1='8' y1='8' x2='24' y2='24'/%3E%3Cline x1='24' y1='8' x2='8' y2='24'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%23ffffff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070a14'/%3E%3Cg stroke='%23a8c4ea' stroke-width='1.8' stroke-linecap='round'%3E%3Cline x1='16' y1='4' x2='16' y2='28'/%3E%3Cline x1='4' y1='16' x2='28' y2='16'/%3E%3Cline x1='8' y1='8' x2='24' y2='24'/%3E%3Cline x1='24' y1='8' x2='8' y2='24'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4.2' fill='%23ffffff'/%3E%3C/svg%3E">
 
 <style>
-    :root {
-        --bg: #050814;
-        --card: #0b1024;
-        --card-hover: #0f1530;
-        --border: #232a45;
-        --text: #e5e7eb;
-        --text-dim: #94a0bd;
-        --accent: #93c5fd;
-        --accent-strong: #ffffff;
-        --serif: 'Playfair Display', serif;
-        --sans: 'Inter', sans-serif;
-    }
+:root {
+    --bg:            #070a14;
+    --bg-soft:       #0b0f1d;
+    --surface:       #0d1223;
+    --surface-hover: #111730;
+    --hairline:      #1b2135;
+    --hairline-lit:  #2a3350;
+    --text:          #e6e9f2;
+    --text-soft:     #b3bcd0;
+    --text-mute:     #7f8aa5;
+    --accent:        #a8c4ea;
+    --accent-lit:    #ffffff;
+    --serif: 'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --measure: 66ch;
+    --gutter: 32px;
+    --rule: 1px solid var(--hairline);
+}
 
-    * { box-sizing: border-box; }
+* { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
 
-    body {
-        max-width: 900px;
-        margin: auto;
-        padding: 0 24px 60px;
-        background-color: var(--bg);
-        color: var(--text);
-        font-family: var(--sans);
-        line-height: 1.65;
-    }
+body {
+    margin: 0;
+    padding: 0 0 96px;
+    background: var(--bg);
+    color: var(--text-soft);
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.72;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
-    h1 {
-        font-family: var(--serif);
-        color: var(--accent-strong);
-        font-size: 3rem;
-    }
+::selection {
+    background: rgba(168, 196, 234, 0.22);
+    color: var(--accent-lit);
+}
 
-    h2 {
-        margin-top: 56px;
-        margin-bottom: 20px;
-        border-bottom: 1px solid var(--border);
-        font-family: var(--serif);
-        font-weight: 600;
-        font-size: 1.6rem;
-        padding-bottom: 8px;
-        scroll-margin-top: 90px;
-    }
+.wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding-inline: var(--gutter);
+}
 
-    h3 {
-        font-family: var(--sans);
-        font-weight: 600;
-        font-size: 1.05rem;
-        margin: 0 0 4px;
-        color: var(--accent-strong);
-    }
+a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 3px;
+    transition: color 0.18s ease;
+}
+a:hover { color: var(--accent-lit); text-decoration: underline; }
 
-    p { color: var(--text); }
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
 
-    ul { padding-left: 20px; }
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--accent-lit);
+    padding: 10px 18px;
+    border: var(--rule);
+    border-radius: 0 0 8px 0;
+    z-index: 200;
+}
+.skip-link:focus { left: 0; }
 
-    a {
-        color: var(--accent);
-        text-decoration: none;
-    }
-    a:hover {
-        color: var(--accent-strong);
-        text-decoration: underline;
-    }
+/* ---------------- Navigation ---------------- */
 
-    /* ---------- Nav ---------- */
-    nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        gap: 8px 18px;
-        padding: 14px 0;
-        margin: 0 -24px;
-        padding-left: 24px;
-        padding-right: 24px;
-        background: rgba(5, 8, 20, 0.85);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border);
-    }
-    nav .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px 18px;
-        min-width: 0;
-    }
-    nav a {
-        margin: 0;
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--text-dim);
-        letter-spacing: 0.02em;
-    }
-    nav a:hover {
-        color: var(--accent-strong);
-        text-decoration: none;
-    }
-    nav .nav-name {
-        font-family: var(--serif);
-        font-weight: 700;
-        color: var(--accent-strong);
-        font-size: 1rem;
-    }
-    nav .nav-name:hover { text-decoration: none; }
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7, 10, 20, 0.78);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    border-bottom: var(--rule);
+}
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 28px;
+    flex-wrap: wrap;
+    padding-block: 15px;
+}
+.nav-name {
+    font-family: var(--serif);
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--text);
+    white-space: nowrap;
+}
+.nav-name:hover { color: var(--accent-lit); text-decoration: none; }
 
-    /* ---------- Hero ---------- */
-    .hero {
-        background:
-            linear-gradient(rgba(3,5,15,0.55), rgba(3,5,15,0.7)),
-            url('images/banner.jpeg');
-        background-size: cover;
-        background-position: center 40%;
-        min-height: 340px;
-        border-radius: 14px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        margin: 28px 0 40px;
-        padding: 30px 20px;
-    }
-    .hero h1 {
-        font-size: 3.4rem;
-        font-weight: 700;
-        margin: 0;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.85);
-    }
-    .hero .tagline {
-        color: rgba(255,255,255,0.88);
-        font-size: 1.05rem;
-        letter-spacing: 0.03em;
-        margin-top: 10px;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.85);
-    }
-    .hero .affiliation {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 14px;
-    }
-    .hero .affiliation img {
-        height: 24px;
-        width: auto;
-        filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
-    }
-    .hero .affiliation span {
-        color: rgba(255,255,255,0.9);
-        font-size: 0.95rem;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.85);
-    }
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 26px;
+    min-width: 0;
+}
+.nav-links a {
+    position: relative;
+    font-size: 0.815rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding-block: 2px;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+.nav-links a:hover,
+.nav-links a.is-active { color: var(--text); text-decoration: none; }
+.nav-links a:hover::after,
+.nav-links a.is-active::after { transform: scaleX(1); }
 
-    /* ---------- Intro / About ---------- */
-    .about {
-        display: flex;
-        gap: 28px;
-        align-items: flex-start;
-    }
-    .about img {
-        width: 160px;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 14px;
-        border: 2px solid var(--border);
-        flex-shrink: 0;
-    }
-    .about .about-text { flex: 1; }
+/* ---------------- Hero ---------------- */
 
-    .role-line {
-        font-size: 1rem;
-        color: var(--text-dim);
-        margin-bottom: 18px;
-    }
-    .role-line strong { color: var(--accent-strong); }
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-bottom: var(--rule);
+    background: #05070f url('images/banner.jpeg') center 42% / cover no-repeat;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(105deg, rgba(5,7,15,0.94) 0%, rgba(5,7,15,0.80) 45%, rgba(5,7,15,0.58) 100%),
+        linear-gradient(to top, rgba(7,10,20,1) 0%, rgba(7,10,20,0) 55%);
+}
+.hero-inner {
+    padding-block: clamp(72px, 13vw, 128px);
+}
+.hero .eyebrow {
+    display: block;
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+.hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.7rem, 7.5vw, 4.1rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.022em;
+    color: #fff;
+    margin: 0;
+}
+.hero-rule {
+    width: 56px;
+    height: 2px;
+    background: var(--accent);
+    margin: 26px 0 22px;
+    opacity: 0.85;
+}
+.hero .tagline {
+    max-width: 34ch;
+    font-size: clamp(1rem, 2.4vw, 1.12rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.84);
+    margin: 0;
+}
+.hero .affiliation {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-top: 28px;
+}
+.hero .affiliation img {
+    height: 26px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+.hero .affiliation span {
+    font-size: 0.9rem;
+    letter-spacing: 0.015em;
+    color: rgba(255,255,255,0.8);
+}
 
-    /* ---------- Quote ---------- */
-    .quote-block {
-        border-left: 3px solid var(--accent);
-        padding: 4px 0 4px 20px;
-        margin: 24px 0 28px;
-        font-family: var(--serif);
-        font-style: italic;
-        font-size: 1.05rem;
-        color: var(--text-dim);
-    }
-    .quote-block cite {
-        display: block;
-        margin-top: 8px;
-        font-family: var(--sans);
-        font-style: normal;
-        font-size: 0.82rem;
-        color: var(--text-dim);
-        letter-spacing: 0.02em;
-    }
+/* ---------------- Sections ---------------- */
 
-    /* ---------- Feature photo ---------- */
-    .feature-photo {
-        margin: 0 0 28px;
-    }
-    .feature-photo img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        object-position: center 75%;
-        border-radius: 12px;
-        border: 1px solid var(--border);
-        display: block;
-    }
-    .feature-photo figcaption {
-        font-size: 0.82rem;
-        color: var(--text-dim);
-        margin-top: 8px;
-    }
+section { scroll-margin-top: 76px; }
 
-    /* ---------- Cards (education / research) ---------- */
-    .card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 18px 20px;
-        margin-bottom: 14px;
-        transition: border-color 0.15s ease, background 0.15s ease;
-    }
-    .card:hover {
-        border-color: #3a4470;
-        background: var(--card-hover);
-    }
-    .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        flex-wrap: wrap;
-        gap: 6px 14px;
-    }
-    .period {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        font-variant-numeric: tabular-nums;
-        white-space: nowrap;
-    }
-    .with-line {
-        font-size: 0.88rem;
-        color: var(--text-dim);
-        margin: 2px 0 10px;
-        font-style: italic;
-    }
-    .card ul { margin: 8px 0 0; padding-left: 18px; }
-    .card ul li { margin-bottom: 4px; }
+.section {
+    padding-top: 72px;
+}
+.section + .section { padding-top: 76px; }
 
-    /* ---------- Publications ---------- */
-    .pub {
-        padding: 14px 0;
-        border-bottom: 1px solid var(--border);
-    }
-    .pub:last-child { border-bottom: none; }
-    .pub-title { font-weight: 500; color: var(--text); }
-    .pub-meta {
-        font-size: 0.88rem;
-        color: var(--text-dim);
-        margin-top: 4px;
-    }
-    .pub-tag {
-        display: inline-block;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #7dd3a8;
-        background: rgba(125, 211, 168, 0.1);
-        border: 1px solid rgba(125, 211, 168, 0.3);
-        border-radius: 6px;
-        padding: 2px 8px;
-        margin-right: 8px;
-        vertical-align: middle;
-    }
-    .pub-tag.proceeding {
-        color: #f0b86e;
-        background: rgba(240, 184, 110, 0.1);
-        border-color: rgba(240, 184, 110, 0.3);
-    }
+.section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 34px;
+    padding-bottom: 14px;
+    border-bottom: var(--rule);
+}
+.section-head h2 {
+    font-family: var(--serif);
+    font-size: 1.62rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin: 0;
+    flex: 1;
+}
+.section-head .index {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--text-mute);
+    font-variant-numeric: tabular-nums;
+}
 
-    /* ---------- Talks ---------- */
-    .talk {
-        padding: 12px 0;
-        border-bottom: 1px solid var(--border);
-    }
-    .talk:last-child { border-bottom: none; }
-    .talk-header {
-        display: flex;
-        justify-content: space-between;
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-    .talk-title { font-weight: 500; }
-    .talk-venue {
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        text-align: right;
-        white-space: nowrap;
-    }
-    .talk-desc {
-        font-size: 0.9rem;
-        color: var(--text-dim);
-        margin-top: 3px;
-    }
+p { margin: 0 0 1.15em; max-width: var(--measure); }
+p:last-child { margin-bottom: 0; }
 
-    /* ---------- Skills ---------- */
-    .skill-group { margin-bottom: 14px; }
-    .skill-group h3 {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--text-dim);
-        font-weight: 600;
-        margin-bottom: 8px;
-    }
-    .tag {
-        display: inline-block;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 999px;
-        padding: 4px 12px;
-        margin: 0 6px 6px 0;
-        font-size: 0.85rem;
-        color: var(--text);
-    }
+h3 {
+    font-family: var(--sans);
+    font-size: 1.02rem;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    color: var(--text);
+    margin: 0;
+}
 
-    /* ---------- Links / buttons ---------- */
-    .links { display: flex; flex-wrap: wrap; gap: 10px; }
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 9px 16px;
-        font-size: 0.92rem;
-        font-weight: 500;
-        color: var(--text);
-    }
-    .btn:hover {
-        border-color: var(--accent);
-        color: var(--accent-strong);
-        text-decoration: none;
-    }
+/* ---------------- About ---------------- */
 
-    footer {
-        margin-top: 60px;
-        padding-top: 20px;
-        border-top: 1px solid var(--border);
-        font-size: 0.85rem;
-        color: var(--text-dim);
-        text-align: center;
-    }
-    footer .updated {
-        display: block;
-        margin-top: 6px;
-        font-size: 0.8rem;
-    }
+.about {
+    display: grid;
+    grid-template-columns: 172px 1fr;
+    gap: 40px;
+    align-items: start;
+}
+.portrait {
+    margin: 0;
+    position: relative;
+}
+.portrait img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 25%;
+    border-radius: 3px;
+    display: block;
+    filter: grayscale(18%) contrast(1.02);
+    transition: filter 0.4s ease;
+}
+.portrait:hover img { filter: grayscale(0%) contrast(1.02); }
+.portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 3px;
+    pointer-events: none;
+}
 
-    @media (max-width: 640px) {
-        body { padding: 0 16px 40px; }
-        nav { margin: 0 -16px; padding-left: 16px; padding-right: 16px; gap: 4px 12px; }
-        nav .nav-links { width: 100%; gap: 4px 14px; }
-        .hero { min-height: 260px; padding: 24px 16px; }
-        .hero h1 { font-size: 2.3rem; }
-        .about { flex-direction: column; align-items: center; text-align: center; }
-        .about img { width: 130px; height: 130px; }
-        .feature-photo img { height: 200px; }
-        .card-header { flex-direction: column; align-items: flex-start; }
-        .talk-header { flex-direction: column; gap: 2px; }
-        .talk-venue { text-align: left; }
+.role-line {
+    font-size: 0.79rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+.role-line strong { color: var(--accent); font-weight: 600; }
+
+.lead {
+    font-size: 1.06rem;
+    line-height: 1.68;
+    color: var(--text);
+}
+
+
+/* ---------------- Tags ---------------- */
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tag {
+    display: inline-block;
+    padding: 5px 13px;
+    border: var(--rule);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.015);
+    font-size: 0.83rem;
+    line-height: 1.5;
+    color: var(--text-soft);
+    transition: border-color 0.18s ease, color 0.18s ease;
+}
+.tag:hover { border-color: var(--hairline-lit); color: var(--text); }
+
+/* ---------------- Timeline (education) ---------------- */
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    bottom: 10px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--hairline-lit), var(--hairline) 85%, transparent);
+}
+.timeline-item {
+    position: relative;
+    padding-bottom: 32px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 9px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1.5px solid var(--hairline-lit);
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+.timeline-item:first-child::before {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+.item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px 20px;
+    flex-wrap: wrap;
+}
+.period {
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.03em;
+    color: var(--text-mute);
+    white-space: nowrap;
+}
+.item-sub {
+    margin: 6px 0 0;
+    font-size: 0.925rem;
+    color: var(--text-soft);
+    max-width: var(--measure);
+}
+.item-sub .sep { color: var(--hairline-lit); padding: 0 4px; }
+
+/* ---------------- Publications ---------------- */
+
+.pub {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 0 14px;
+    padding: 22px 0;
+    border-bottom: var(--rule);
+}
+.pub:last-child { border-bottom: none; }
+.pub-num {
+    font-family: var(--serif);
+    font-size: 0.9rem;
+    color: var(--text-mute);
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+}
+.pub-title {
+    font-size: 1.01rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text);
+    margin: 0 0 6px;
+    max-width: var(--measure);
+}
+.pub-cite {
+    font-size: 0.885rem;
+    line-height: 1.6;
+    color: var(--text-mute);
+    margin: 0 0 10px;
+    max-width: var(--measure);
+}
+.pub-cite em { font-style: italic; color: var(--text-soft); }
+.pub-cite strong { font-weight: 600; color: var(--text-soft); }
+.pub-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    font-size: 0.86rem;
+    color: var(--text-mute);
+}
+.pub-tag {
+    display: inline-block;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    border: var(--rule);
+    border-radius: 3px;
+    padding: 2px 7px;
+}
+.pub-tag.is-journal { color: var(--accent); border-color: rgba(168,196,234,0.32); }
+
+/* ---------------- Entry list (talks / workshops) ---------------- */
+
+.entry {
+    display: grid;
+    grid-template-columns: 1fr 224px;
+    gap: 6px 32px;
+    align-items: start;
+    padding: 19px 0;
+    border-bottom: var(--rule);
+}
+.entry:last-child { border-bottom: none; }
+.entry-title {
+    display: block;
+    font-size: 0.99rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+}
+.entry-venue {
+    font-size: 0.855rem;
+    color: var(--text-mute);
+    text-align: right;
+    line-height: 1.55;
+}
+.entry-venue .date {
+    display: block;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+    opacity: 0.78;
+}
+.entry-desc {
+    font-size: 0.9rem;
+    color: var(--text-mute);
+    line-height: 1.6;
+    max-width: 62ch;
+    margin: 5px 0 0;
+}
+
+/* ---------------- Figure ---------------- */
+
+.feature-photo {
+    margin: 38px 0 0;
+}
+.feature-photo img {
+    width: 100%;
+    height: clamp(200px, 34vw, 330px);
+    object-fit: cover;
+    object-position: center 72%;
+    border-radius: 3px;
+    display: block;
+    filter: grayscale(12%);
+}
+.feature-photo figcaption {
+    font-size: 0.8rem;
+    color: var(--text-mute);
+    margin-top: 11px;
+    letter-spacing: 0.01em;
+}
+
+/* ---------------- Skills ---------------- */
+
+.skill-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 14px 28px;
+    padding: 22px 0;
+    border-bottom: var(--rule);
+    align-items: start;
+}
+.skill-row:last-child { border-bottom: none; }
+.skill-row h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    padding-top: 4px;
+}
+
+/* ---------------- Buttons / contact ---------------- */
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border: var(--rule);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.015);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text);
+    transition: border-color 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+.btn:hover {
+    border-color: var(--hairline-lit);
+    background: var(--surface-hover);
+    color: var(--accent-lit);
+    text-decoration: none;
+}
+.btn svg { width: 15px; height: 15px; flex-shrink: 0; opacity: 0.75; }
+.btn.is-primary {
+    border-color: rgba(168,196,234,0.4);
+    color: var(--accent);
+}
+.btn.is-primary:hover { border-color: var(--accent); }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px 48px;
+}
+.contact-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 9px;
+}
+.contact-value {
+    font-size: 0.97rem;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* ---------------- Footer ---------------- */
+
+footer {
+    margin-top: 40px;
+    padding-top: 26px;
+    border-top: var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px 24px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    color: var(--text-mute);
+}
+footer a { color: var(--text-mute); }
+footer a:hover { color: var(--accent); }
+
+/* ---------------- Research projects ---------------- */
+
+.project {
+    padding: 26px 0;
+    border-bottom: var(--rule);
+}
+.project:first-of-type { padding-top: 6px; }
+.project:last-child { border-bottom: none; }
+.project-collab {
+    margin: 7px 0 0;
+    font-size: 0.875rem;
+    color: var(--text-mute);
+    max-width: var(--measure);
+}
+.project ul {
+    margin: 13px 0 0;
+    padding-left: 19px;
+    max-width: var(--measure);
+}
+.project li {
+    margin-bottom: 9px;
+    font-size: 0.925rem;
+    line-height: 1.66;
+    color: var(--text-soft);
+}
+.project li:last-child { margin-bottom: 0; }
+.project li::marker { color: var(--hairline-lit); }
+
+.research-intro {
+    font-size: 1.04rem;
+    line-height: 1.68;
+    color: var(--text);
+    margin-bottom: 26px;
+}
+
+/* ---------------- Closing quote ---------------- */
+
+.closing-quote {
+    margin-top: 86px;
+    text-align: center;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-mute);
+    opacity: 0.58;
+}
+.closing-quote .attrib {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* ---------------- Reveal on scroll ---------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 760px) {
+    :root { --gutter: 22px; }
+    .about { grid-template-columns: 1fr; gap: 26px; }
+    .portrait { max-width: 148px; }
+    .entry { grid-template-columns: 1fr; gap: 4px; }
+    .entry-venue { text-align: left; }
+    .entry-venue .date { display: inline; }
+    .entry-venue .date::before { content: "· "; }
+    .skill-row { grid-template-columns: 1fr; gap: 12px; }
+    .skill-row h3 { padding-top: 0; }
+    .nav-inner { padding-block: 12px; }
+    .nav-links { width: 100%; gap: 2px 20px; }
+    .nav-links a { font-size: 0.76rem; letter-spacing: 0.06em; }
+    .section { padding-top: 56px; }
+    .section + .section { padding-top: 58px; }
+    footer { justify-content: center; text-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
     }
+    .reveal { opacity: 1; transform: none; }
+}
+
+@media print {
+    :root { --text: #000; --text-soft: #222; --text-mute: #555; --hairline: #ccc; }
+    body { background: #fff; color: #222; padding: 0; }
+    .nav, .hero, .feature-photo, .skip-link { display: none; }
+    a { color: #000; }
+    .section { padding-top: 24px; page-break-inside: avoid; }
+    .tag, .btn { border-color: #ccc; }
+    .reveal { opacity: 1; transform: none; }
+}
 </style>
 </head>
 
-<body>
+<body id="top">
 
-<nav>
-    <a class="nav-name" href="#top">Animesh Sah</a>
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#publications">Publications</a>
-        <a href="#talks">Talks</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav">
+    <div class="wrap nav-inner">
+        <a class="nav-name" href="#top">Animesh&nbsp;Sah</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#talks">Talks</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
 </nav>
 
-<div id="top" class="hero">
-    <h1>Animesh Sah</h1>
-    <p class="tagline">Observational Cosmology &middot; Type Ia Supernovae &middot; Large-Scale Structure</p>
-    <div class="affiliation">
-        <img src="images/tifr-logo-gradient-blue.png" alt="TIFR logo">
-        <span>Tata Institute of Fundamental Research</span>
+<header class="hero">
+    <div class="wrap hero-inner">
+        <span class="eyebrow">Observational Cosmology</span>
+        <h1>Animesh Sah</h1>
+        <div class="hero-rule"></div>
+        <p class="tagline">Type&nbsp;Ia supernovae, cosmography, and the large-scale structure of the Universe.</p>
+        <div class="affiliation">
+            <img src="images/tifr-logo-gradient-blue.png" alt="">
+            <span>Tata Institute of Fundamental Research, Mumbai</span>
+        </div>
     </div>
-</div>
+</header>
 
-<section id="about">
+<main id="main" class="wrap">
+
+<section id="about" class="section reveal">
+    <div class="section-head">
+        <h2>About</h2>
+        <span class="index">01</span>
+    </div>
+
     <div class="about">
-        <img src="images/Animesh_profile.jpeg" alt="Photo of Animesh Sah">
-        <div class="about-text">
-            <p class="role-line"><strong>Integrated PhD Student</strong>, Tata Institute of Fundamental Research (TIFR), Mumbai</p>
-            <p>
-            I am a computational cosmologist working on observational cosmology,
-            Type Ia supernovae, cosmography, and large-scale structure surveys.
-            My research focuses on extracting cosmological information from
-            supernova observations and testing cosmological models using
-            data-driven approaches.
+        <figure class="portrait">
+            <img src="images/Animesh_profile.jpeg" alt="Portrait of Animesh Sah">
+        </figure>
+        <div>
+            <p class="role-line"><strong>Ph.D. Candidate in Physics</strong><br>Department of Astronomy &amp; Astrophysics, TIFR</p>
+            <p class="lead">
+            I am a computational cosmologist at the Tata Institute of Fundamental Research,
+            working on model-independent tests of the standard cosmological model using
+            Type&nbsp;Ia supernovae and large-scale structure surveys.
             </p>
             <p>
-            I am currently a member of the LSST Dark Energy Science Collaboration (DESC)
-            and lead a project investigating possible anisotropies in the local Universe
-            using Type Ia supernova observations.
+            My thesis work concerns the anisotropy of the local Universe: I have shown that
+            the Pantheon+ supernova compilation carries a significant dipolar signal in both
+            the expansion rate and the deceleration parameter, and that correcting these
+            supernovae for progenitor-age evolution changes the inferred expansion history.
             </p>
             <p>
-            I am also involved in characterizing the Fundamental Plane sample from the
-            DESI Legacy Imaging Surveys and developing realistic mock catalogues for
-            cosmological inference studies.
+            I am a member of the <strong>LSST Dark Energy Science Collaboration (DESC)</strong>,
+            and I also build mock catalogues for the Fundamental Plane sample of the
+            DESI Legacy Imaging Surveys.
             </p>
         </div>
     </div>
+</section>
 
-    <blockquote class="quote-block">
-        &ldquo;You too can be a hero&rdquo;
-        <cite>&mdash; All Might, My Hero Academia</cite>
-    </blockquote>
+<section id="research" class="section reveal">
+    <div class="section-head">
+        <h2>Research</h2>
+        <span class="index">02</span>
+    </div>
+
+    <p class="research-intro">
+    Model-independent tests of the standard cosmological model; the impact of cosmic
+    anisotropies, inhomogeneities, and bulk flows on cosmological inference; peculiar
+    velocities; and the application of machine-learning methods to large-scale
+    structure analysis.
+    </p>
+
+    <div class="tag-list" style="margin-bottom:10px">
+        <span class="tag">Type Ia Supernova Cosmology</span>
+        <span class="tag">Cosmic Anisotropy</span>
+        <span class="tag">Cosmography</span>
+        <span class="tag">Dark Energy</span>
+        <span class="tag">Peculiar Velocities</span>
+        <span class="tag">Bulk Flows</span>
+        <span class="tag">Inhomogeneous Cosmology</span>
+        <span class="tag">LSST DESC</span>
+        <span class="tag">Machine Learning for LSS</span>
+    </div>
+
+    <div class="project">
+        <div class="item-head">
+            <h3>Anisotropy and progenitor-age bias in the Pantheon+ supernova compilation</h3>
+            <span class="period">2023 &ndash; 2026</span>
+        </div>
+        <p class="project-collab">with Dr.&nbsp;Mohamed Rameez (TIFR), Prof.&nbsp;Subir Sarkar (University of Oxford), and Prof.&nbsp;Christos Tsagas (Aristotle University of Thessaloniki)</p>
+        <ul>
+            <li>Detected a dipolar anisotropy in the Hubble expansion rate of the Pantheon+ Type&nbsp;Ia supernova catalogue exceeding 1.5&nbsp;km/s/Mpc &mdash; larger than the claimed 1% uncertainty of the SH0ES measurement &mdash; with the deceleration parameter showing dipolar modulation at 75&sigma; significance, using Maximum Likelihood Estimation across the heliocentric, CMB, and Local Group frames.</li>
+            <li>Showed that correcting for Type&nbsp;Ia supernova progenitor-age evolution shifts the monopole deceleration parameter to positive values, indicating that the isotropic expansion of the Universe is decelerating rather than accelerating.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <div class="item-head">
+            <h3>Tests of tilted cosmology</h3>
+            <span class="period">2025 &ndash; Present</span>
+        </div>
+        <p class="project-collab">with Dr.&nbsp;Mohamed Rameez (TIFR)</p>
+        <ul>
+            <li>Leading development of a model-independent pipeline to test tilted &Lambda;CDM cosmologies against upcoming LSST supernova data, validated using realistic simulations from SNANA.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <div class="item-head">
+            <h3>Mock catalogues for the DESI Fundamental Plane sample</h3>
+            <span class="period">2025 &ndash; Present</span>
+        </div>
+        <p class="project-collab">with Dr.&nbsp;Shadab Alam (TIFR)</p>
+        <ul>
+            <li>Building realistic mock catalogues for a photometric sample of ~480,000 early-type galaxies from the DESI Legacy Imaging Survey, using the AbacusSummit N-body simulation suite as the underlying dark-matter field.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="education" class="section reveal">
+    <div class="section-head">
+        <h2>Education</h2>
+        <span class="index">03</span>
+    </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="item-head">
+                <h3>Ph.D., Physics</h3>
+                <span class="period">2023 &ndash; Present &middot; expected early 2027</span>
+            </div>
+            <p class="item-sub">Tata Institute of Fundamental Research, Mumbai<span class="sep">/</span>Advisor: Dr.&nbsp;Mohamed Rameez</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-head">
+                <h3>M.Sc., Physics</h3>
+                <span class="period">2020 &ndash; 2023</span>
+            </div>
+            <p class="item-sub">Tata Institute of Fundamental Research, Mumbai<span class="sep">/</span>Integrated Ph.D. programme</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="item-head">
+                <h3>B.Sc. (Honours), Physics</h3>
+                <span class="period">2017 &ndash; 2020</span>
+            </div>
+            <p class="item-sub">University of Delhi, India</p>
+        </div>
+    </div>
+</section>
+
+<section id="publications" class="section reveal">
+    <div class="section-head">
+        <h2>Publications</h2>
+        <span class="index">04</span>
+    </div>
+
+    <p>
+    A complete and up-to-date record is maintained on my
+    <a href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">INSPIRE-HEP</a> and
+    <a href="https://orcid.org/0000-0001-9541-916X" target="_blank" rel="noopener">ORCID</a> profiles.
+    </p>
+
+    <div class="pub">
+        <span class="pub-num">01</span>
+        <div>
+            <p class="pub-title">Pantheon+ supernovae corrected for progenitor age indicate the universe is decelerating</p>
+            <p class="pub-cite">A.&nbsp;Sah, M.&nbsp;Rameez &amp; S.&nbsp;Sarkar &middot; <em>Monthly Notices of the Royal Astronomical Society</em> <strong>549</strong>, stag844 (2026)</p>
+            <div class="pub-meta">
+                <span class="pub-tag is-journal">Journal</span>
+                <a href="https://academic.oup.com/mnras/article/549/3/stag844/8701424" target="_blank" rel="noopener">MNRAS</a>
+                <a href="https://arxiv.org/abs/2606.09650" target="_blank" rel="noopener">arXiv:2606.09650</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pub">
+        <span class="pub-num">02</span>
+        <div>
+            <p class="pub-title">Anisotropy in Pantheon+ supernovae</p>
+            <p class="pub-cite">A.&nbsp;Sah, M.&nbsp;Rameez, S.&nbsp;Sarkar &amp; C.&nbsp;G.&nbsp;Tsagas &middot; <em>European Physical Journal C</em> <strong>85</strong>, 596 (2025)</p>
+            <div class="pub-meta">
+                <span class="pub-tag is-journal">Journal</span>
+                <a href="https://link.springer.com/article/10.1140/epjc/s10052-025-14222-w" target="_blank" rel="noopener">EPJ&nbsp;C</a>
+                <a href="https://arxiv.org/abs/2411.10838" target="_blank" rel="noopener">arXiv:2411.10838</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pub">
+        <span class="pub-num">03</span>
+        <div>
+            <p class="pub-title">Examining the cosmic anisotropy with the Pantheon+ supernovae</p>
+            <p class="pub-cite">A.&nbsp;Sah &middot; <em>Springer Proceedings in Physics</em> <strong>937</strong>, 284&ndash;287 (2025) &middot; Proceedings of the XXVI DAE-BRNS High Energy Physics Symposium 2024</p>
+            <div class="pub-meta">
+                <span class="pub-tag">Proceedings</span>
+                <a href="https://link.springer.com/chapter/10.1007/978-981-95-1513-4_64" target="_blank" rel="noopener">Springer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="talks" class="section reveal">
+    <div class="section-head">
+        <h2>Talks &amp; Presentations</h2>
+        <span class="index">05</span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">The Concurrence of Mega-Surveys</span>
+            <p class="entry-desc">Flash talk (programme participant &mdash; see Schools &amp; Workshops).</p>
+        </div>
+        <span class="entry-venue">ICTS, Bengaluru<span class="date">Aug 2026</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Supernova Cosmology: New Challenges and Opportunities</span>
+            <p class="entry-desc">Contributed talk on Pantheon+ anisotropy and progenitor-age systematics.</p>
+        </div>
+        <span class="entry-venue">Yonsei University, Seoul<span class="date">Jun 2026</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Cosmic Lighthouses: Astrophysical and Cosmological Challenges with Type Ia Supernovae</span>
+            <p class="entry-desc">Contributed talk on Pantheon+ anisotropy.</p>
+        </div>
+        <span class="entry-venue">Kavli Institute for Cosmology, Cambridge<span class="date">Jul 2025</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">5th EuCAPT Annual Symposium</span>
+            <p class="entry-desc">Talk on anisotropy in Pantheon+ supernovae. &middot; <a href="https://indico.cern.ch/event/1515773/contributions/6467823/" target="_blank" rel="noopener">Programme</a></p>
+        </div>
+        <span class="entry-venue">Online<span class="date">May 2025</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Pune&ndash;Mumbai Cosmology and Astro-Particle Meeting &mdash; Chapter 4</span>
+            <p class="entry-desc">Contributed talk on anisotropy in Pantheon+.</p>
+        </div>
+        <span class="entry-venue">IIT Bombay<span class="date">Feb 2025</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">XXVI DAE-BRNS High Energy Physics Symposium 2024</span>
+            <p class="entry-desc">Contributed talk on cosmic anisotropy with Pantheon+.</p>
+        </div>
+        <span class="entry-venue">Banaras Hindu University, Varanasi<span class="date">Dec 2024</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">A Multipolar Universe?</span>
+            <p class="entry-desc"><strong>Invited talk</strong> on Pantheon+ anisotropy.</p>
+        </div>
+        <span class="entry-venue">Aristotle University of Thessaloniki<span class="date">Sept 2023</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Less Travelled Path to the Dark Universe</span>
+            <p class="entry-desc">Talk on cosmological analysis with the Pantheon+ compilation. &middot; <a href="https://www.youtube.com/watch?v=llq0L7GAI98&amp;t=1162s" target="_blank" rel="noopener">Recording</a></p>
+        </div>
+        <span class="entry-venue">ICTS, Bengaluru<span class="date">Mar 2023</span></span>
+    </div>
 
     <figure class="feature-photo">
-        <img src="images/talk1.jpg" alt="Animesh Sah giving a talk">
+        <img src="images/talk1.jpg" alt="Animesh Sah presenting at a conference">
+        <figcaption>Presenting work on anisotropy in the Pantheon+ supernova compilation.</figcaption>
     </figure>
 </section>
 
-<h2>Research Interests</h2>
-<div class="tag-list">
-    <span class="tag">Type Ia Supernova Cosmology</span>
-    <span class="tag">Cosmography</span>
-    <span class="tag">Observational Cosmology</span>
-    <span class="tag">Dark Energy</span>
-    <span class="tag">Cosmic Anisotropy</span>
-    <span class="tag">LSST DESC</span>
-    <span class="tag">Peculiar Velocities</span>
-    <span class="tag">Bulk Flows</span>
-    <span class="tag">Machine Learning for LSS</span>
-</div>
-
-<h2 id="education">Education</h2>
-
-<div class="card">
-    <div class="card-header">
-        <h3>Ph.D., Physics</h3>
-        <span class="period">2023 &ndash; Present (expected early 2027)</span>
+<section id="workshops" class="section reveal">
+    <div class="section-head">
+        <h2>Schools &amp; Workshops</h2>
+        <span class="index">06</span>
     </div>
-    <p class="with-line">Tata Institute of Fundamental Research (TIFR), Mumbai, India &middot; Advisor: Dr. Mohamed Rameez</p>
-</div>
 
-<div class="card">
-    <div class="card-header">
-        <h3>M.Sc., Physics</h3>
-        <span class="period">Sept. 2020 &ndash; 2023</span>
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">The Concurrence of Mega-Surveys</span>
+            <p class="entry-desc">Project: reimplemented and trained a transformer-based decoder (GOTHAM) to accelerate halo catalogue generation from particle-mesh simulations via distributed multi-GPU training. Also presented a flash talk.</p>
+        </div>
+        <span class="entry-venue">ICTS, Bengaluru<span class="date">Jul&ndash;Aug 2026</span></span>
     </div>
-    <p class="with-line">Tata Institute of Fundamental Research (TIFR), Mumbai, India &middot; Integrated PhD programme</p>
-</div>
 
-<div class="card">
-    <div class="card-header">
-        <h3>B.Sc. (Honours), Physics</h3>
-        <span class="period">July 2017 &ndash; June 2020</span>
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Rethinking Cosmology</span>
+        </div>
+        <span class="entry-venue">Raman Research Institute, Bengaluru<span class="date">Dec 2025</span></span>
     </div>
-    <p class="with-line">University of Delhi, India</p>
-</div>
 
-<h2 id="publications">Publications</h2>
-
-<p>
-Full and up-to-date list also available on my
-<a href="https://inspirehep.net/authors/2931648">Inspire HEP profile</a>.
-</p>
-
-<div class="pub">
-    <span class="pub-tag">Journal</span>
-    <span class="pub-title">A. Sah et al., &ldquo;Anisotropy in Pantheon+ Supernovae&rdquo;</span>
-    <div class="pub-meta">
-        European Physical Journal C &middot;
-        <a href="https://arxiv.org/abs/2411.10838">arXiv:2411.10838</a>
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Pune&ndash;Mumbai Cosmology and Astro-Particle Meeting</span>
+            <p class="entry-desc">Chapters 3, 5, and 7. (Chapter 4 listed under Talks.)</p>
+        </div>
+        <span class="entry-venue">TIFR, Mumbai &middot; IISER, Pune<span class="date">2024&ndash;2026</span></span>
     </div>
-</div>
 
-<div class="pub">
-    <span class="pub-tag">Journal</span>
-    <span class="pub-title">A. Sah et al., &ldquo;Pantheon+ supernovae corrected for progenitor age indicate the universe is decelerating&rdquo;</span>
-    <div class="pub-meta">
-        Monthly Notices of the Royal Astronomical Society &middot;
-        <a href="https://arxiv.org/abs/2606.09650">arXiv:2606.09650</a>
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Largest Cosmological Surveys and Big Data Science</span>
+            <p class="entry-desc">Project: reanalysed Dark Energy Survey cosmic-shear measurements using machine-learning techniques.</p>
+        </div>
+        <span class="entry-venue">ICTS, Bengaluru<span class="date">May 2023</span></span>
     </div>
-</div>
+</section>
 
-<div class="pub">
-    <span class="pub-tag proceeding">Proceedings</span>
-    <span class="pub-title">A. Sah et al., &ldquo;Examining the Cosmic Anisotropy with the Pantheon+ Supernovae&rdquo;</span>
-    <div class="pub-meta">Springer Nature Proceedings</div>
-</div>
-
-<h2>Beyond Physics</h2>
-<p>
-When I'm not thinking about supernovae, I'm usually training calisthenics,
-out for a run, sketching, or on a trek somewhere. I'm also an anime fan
-&mdash; happy to talk recommendations.
-</p>
-<div class="tag-list">
-    <span class="tag">Calisthenics</span>
-    <span class="tag">Running</span>
-    <span class="tag">Sketching</span>
-    <span class="tag">Trekking</span>
-    <span class="tag">Anime</span>
-</div>
-
-<h2 id="talks">Talks &amp; Presentations</h2>
-
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">The Concurrence of Mega-Surveys</span>
-        <span class="talk-venue">ICTS, Bangalore &middot; Aug 2026</span>
+<section id="skills" class="section reveal">
+    <div class="section-head">
+        <h2>Technical Skills</h2>
+        <span class="index">07</span>
     </div>
-    <div class="talk-desc">Flash talk.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">Supernova Cosmology: New Challenges and Opportunities</span>
-        <span class="talk-venue">Yonsei University, Seoul &middot; Jun 2026</span>
+    <div class="skill-row">
+        <h3>Statistical Methods</h3>
+        <div class="tag-list">
+            <span class="tag">Frequentist &amp; Bayesian Inference</span>
+            <span class="tag">Maximum Likelihood Estimation</span>
+            <span class="tag">MCMC</span>
+            <span class="tag">HMC (emcee, NumPyro)</span>
+        </div>
     </div>
-    <div class="talk-desc">Talk on Pantheon+ anisotropy and progenitor-age systematics.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">Cosmic Lighthouses: Astrophysical and Cosmological Challenges with Type Ia Supernovae</span>
-        <span class="talk-venue">Kavli Institute for Cosmology, Cambridge &middot; Jul 2025</span>
+    <div class="skill-row">
+        <h3>Programming</h3>
+        <div class="tag-list">
+            <span class="tag">Python (NumPy, SciPy, Astropy, Pandas, JAX)</span>
+            <span class="tag">C++</span>
+            <span class="tag">Mathematica</span>
+        </div>
     </div>
-    <div class="talk-desc">Talk on Pantheon+ anisotropy.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">5th EuCAPT Annual Symposium</span>
-        <span class="talk-venue">Online &middot; May 2025</span>
+    <div class="skill-row">
+        <h3>Machine Learning</h3>
+        <div class="tag-list">
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">XGBoost &amp; CatBoost</span>
+            <span class="tag">Transformers</span>
+            <span class="tag">CNNs</span>
+            <span class="tag">Distributed multi-GPU training</span>
+        </div>
     </div>
-    <div class="talk-desc">Talk on anisotropy in Pantheon+ supernovae.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">XXVI DAE-BRNS High Energy Physics Symposium 2024</span>
-        <span class="talk-venue">Banaras Hindu University, Varanasi &middot; Dec 2024</span>
+    <div class="skill-row">
+        <h3>High-Performance Computing</h3>
+        <div class="tag-list">
+            <span class="tag">HTCondor</span>
+            <span class="tag">SLURM</span>
+            <span class="tag">PBS</span>
+            <span class="tag">NERSC</span>
+            <span class="tag">GPU-accelerated computing</span>
+        </div>
     </div>
-    <div class="talk-desc">Contributed talk on cosmic anisotropy with Pantheon+.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">A Multipolar Universe?</span>
-        <span class="talk-venue">Aristotle University of Thessaloniki, Greece &middot; Sept 2023</span>
+    <div class="skill-row">
+        <h3>Cosmology Software</h3>
+        <div class="tag-list">
+            <span class="tag">SNANA</span>
+            <span class="tag">PIPPIN</span>
+            <span class="tag">SALT2 / SALT3</span>
+            <span class="tag">TreeCorr</span>
+            <span class="tag">HEALPix</span>
+        </div>
     </div>
-    <div class="talk-desc">Talk on Pantheon+ anisotropy.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">Less Travelled Path to the Dark Universe</span>
-        <span class="talk-venue">ICTS, Bangalore &middot; Mar 2023</span>
+    <div class="skill-row">
+        <h3>Data &amp; Tools</h3>
+        <div class="tag-list">
+            <span class="tag">Large-scale FITS / HDF5</span>
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">LaTeX</span>
+        </div>
     </div>
-    <div class="talk-desc">Talk on cosmological analysis with the Pantheon+ compilation.</div>
-</div>
+</section>
 
-<h2>Schools &amp; Workshops</h2>
-
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">The Concurrence of Mega-Surveys</span>
-        <span class="talk-venue">ICTS, Bangalore &middot; Jul&ndash;Aug 2026</span>
+<section id="awards" class="section reveal">
+    <div class="section-head">
+        <h2>Awards &amp; Qualifications</h2>
+        <span class="index">08</span>
     </div>
-    <div class="talk-desc">Project: implemented and trained a transformer-based decoder (GOTHAM) to accelerate halo catalogue generation from particle-mesh simulations via distributed multi-GPU training.</div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">Rethinking Cosmology</span>
-        <span class="talk-venue">Raman Research Institute, Bengaluru &middot; Dec 2025</span>
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Qualified the TIFR Graduate School (GS) Admission Test and interview in Physics</span>
+        </div>
+        <span class="entry-venue"><span class="date">2020</span></span>
     </div>
-</div>
 
-<div class="talk">
-    <div class="talk-header">
-        <span class="talk-title">Largest Cosmological Surveys and Big Data Science</span>
-        <span class="talk-venue">ICTS, Bangalore &middot; May 2023</span>
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Qualified the Joint Admission Test for M.Sc. (IIT JAM) in Physics</span>
+        </div>
+        <span class="entry-venue"><span class="date">2020</span></span>
     </div>
-    <div class="talk-desc">Project: reanalyzed Dark Energy Survey cosmic-shear measurements using machine-learning techniques.</div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Shortlisted for interview at ICTS (via TIFR GS score) for the Integrated Ph.D. in Physics</span>
+        </div>
+        <span class="entry-venue"><span class="date">2020</span></span>
+    </div>
+</section>
+
+<section id="service" class="section reveal">
+    <div class="section-head">
+        <h2>Service &amp; Outreach</h2>
+        <span class="index">09</span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Organizing Committee Member, Young Astronomers&rsquo; Meet (YAM 2025)</span>
+            <p class="entry-desc">Meeting supported by the Astronomical Society of India for early-career researchers in astronomy, astrophysics, and cosmology.</p>
+        </div>
+        <span class="entry-venue">TIFR, Mumbai<span class="date">Mar 2025</span></span>
+    </div>
+
+    <div class="entry">
+        <div class="entry-main">
+            <span class="entry-title">Volunteer, Public Outreach Events</span>
+        </div>
+        <span class="entry-venue">TIFR, Mumbai</span>
+    </div>
+
+    <div class="skill-row" style="border-bottom:none;padding-top:26px">
+        <h3>Professional Memberships</h3>
+        <div class="tag-list">
+            <span class="tag">LSST Dark Energy Science Collaboration (DESC)</span>
+        </div>
+    </div>
+</section>
+
+<section id="beyond" class="section reveal">
+    <div class="section-head">
+        <h2>Beyond Physics</h2>
+        <span class="index">10</span>
+    </div>
+    <p>
+    When I am not thinking about supernovae, I am usually training calisthenics,
+    out for a run, sketching, or on a trek somewhere. I am also an anime fan &mdash;
+    always happy to trade recommendations.
+    </p>
+    <div class="tag-list">
+        <span class="tag">Calisthenics</span>
+        <span class="tag">Running</span>
+        <span class="tag">Sketching</span>
+        <span class="tag">Trekking</span>
+        <span class="tag">Anime</span>
+    </div>
+</section>
+
+<section id="contact" class="section reveal">
+    <div class="section-head">
+        <h2>Contact</h2>
+        <span class="index">11</span>
+    </div>
+
+    <div class="contact-grid">
+        <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:animesh.sah@tifr.res.in">animesh.sah@tifr.res.in</a></div>
+        </div>
+        <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">
+                Department of Astronomy &amp; Astrophysics<br>
+                Tata Institute of Fundamental Research<br>
+                Homi Bhabha Road, Mumbai 400005, India
+            </div>
+        </div>
+    </div>
+
+    <div class="links" style="margin-top:34px">
+        <a class="btn is-primary" href="CV_animesh.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Curriculum Vitae
+        </a>
+        <a class="btn" href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            INSPIRE-HEP
+        </a>
+        <a class="btn" href="https://orcid.org/0000-0001-9541-916X" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="8.01"/><line x1="12" y1="11" x2="12" y2="16"/></svg>
+            ORCID
+        </a>
+        <a class="btn" href="https://github.com/Shin107" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/animesh-sah-5585b2171" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+        </a>
+    </div>
+</section>
+
+<div class="closing-quote">
+    &ldquo;You too can be a hero.&rdquo;
+    <span class="attrib">All Might</span>
 </div>
-
-<h2>Technical Skills</h2>
-
-<div class="skill-group">
-    <h3>Statistical Methods</h3>
-    <span class="tag">Frequentist &amp; Bayesian Inference</span>
-    <span class="tag">Maximum Likelihood Estimation</span>
-    <span class="tag">MCMC</span>
-    <span class="tag">HMC (emcee, NumPyro)</span>
-</div>
-
-<div class="skill-group">
-    <h3>Programming &amp; Machine Learning</h3>
-    <span class="tag">Python (NumPy, SciPy, Astropy, Pandas, JAX)</span>
-    <span class="tag">C++</span>
-    <span class="tag">Mathematica</span>
-    <span class="tag">TensorFlow</span>
-    <span class="tag">PyTorch</span>
-    <span class="tag">Transformers &amp; CNNs</span>
-    <span class="tag">Distributed multi-GPU training</span>
-</div>
-
-<div class="skill-group">
-    <h3>Cosmology Software &amp; Computing</h3>
-    <span class="tag">SNANA</span>
-    <span class="tag">SALT2/SALT3</span>
-    <span class="tag">TreeCorr</span>
-    <span class="tag">HEALPix</span>
-    <span class="tag">HTCondor / SLURM / PBS</span>
-    <span class="tag">GPU computing</span>
-    <span class="tag">FITS/HDF5</span>
-</div>
-
-<h2>Professional Memberships</h2>
-<p>Member, LSST Dark Energy Science Collaboration (DESC).</p>
-
-<h2 id="cv">Curriculum Vitae</h2>
-
-<p>
-<a class="btn" href="CV_animesh.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
-</p>
-
-<h2>Links</h2>
-
-<div class="links">
-    <a class="btn" href="https://github.com/Shin107" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn" href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">Inspire HEP</a>
-</div>
-
-<h2 id="contact">Contact</h2>
-
-<p>
-Email: <a href="mailto:animesh.sah@tifr.res.in">animesh.sah@tifr.res.in</a><br>
-Tata Institute of Fundamental Research, Mumbai, India
-</p>
 
 <footer>
-    &copy; 2026 Animesh Sah
-    <span class="updated">Last updated: August 2026</span>
+    <span>&copy; 2026 Animesh Sah</span>
+    <span>Last updated September 2026</span>
 </footer>
+
+</main>
+
+<script>
+(function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* Reveal sections as they enter the viewport */
+    var revealables = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+        revealables.forEach(function (el) { el.classList.add('is-visible'); });
+    } else {
+        var revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+        revealables.forEach(function (el) { revealObserver.observe(el); });
+    }
+
+    /* Highlight the nav link for the section currently in view */
+    var linkFor = {};
+    document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) {
+        linkFor[a.getAttribute('href').slice(1)] = a;
+    });
+    var tracked = Object.keys(linkFor)
+        .map(function (id) { return document.getElementById(id); })
+        .filter(Boolean);
+
+    if ('IntersectionObserver' in window && tracked.length) {
+        var visible = new Set();
+        var navObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) { visible.add(entry.target.id); }
+                else { visible.delete(entry.target.id); }
+            });
+            var current = tracked.filter(function (s) { return visible.has(s.id); })[0];
+            Object.keys(linkFor).forEach(function (id) {
+                linkFor[id].classList.toggle('is-active', !!current && id === current.id);
+            });
+        }, { rootMargin: '-72px 0px -55% 0px', threshold: 0 });
+        tracked.forEach(function (s) { navObserver.observe(s); });
+    }
+})();
+</script>
 
 </body>
 </html>

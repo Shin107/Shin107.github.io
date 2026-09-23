@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash('/Applications/Brave Browser.app/Contents/MacOS/Brave Browser' --headless=new --disable-gpu --no-sandbox --screenshot=/tmp/site_preview/mobile2.png --window-size=390,844 http://localhost:8935/index.html)",
+      "Bash(osascript)"
+    ]
+  }
+}
