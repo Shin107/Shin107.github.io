@@ -12,7 +12,7 @@
 <meta name="description" content="Animesh Sah — Ph.D. candidate in observational cosmology at TIFR, Mumbai. Model-independent tests of the standard cosmological model, cosmic anisotropy, Type Ia supernovae, and large-scale structure.">
 <meta property="og:title" content="Animesh Sah — Observational Cosmology">
 <meta property="og:description" content="Ph.D. candidate in observational cosmology at TIFR, Mumbai, working on Type Ia supernova cosmology and cosmic anisotropy.">
-<meta property="og:image" content="https://shin107.github.io/images/banner.jpeg">
+<meta property="og:image" content="https://shin107.github.io/images/background.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shin107.github.io/">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,7 +66,7 @@ body {
 }
 
 .wrap {
-    max-width: 880px;
+    max-width: 1240px;
     margin: 0 auto;
     padding-inline: var(--gutter);
 }
@@ -166,7 +166,7 @@ a:hover { color: var(--accent-lit); text-decoration: underline; }
     isolation: isolate;
     overflow: hidden;
     border-bottom: var(--rule);
-    background: #05070f url('images/banner.jpeg') center 42% / cover no-repeat;
+    background: #05070f url('images/background.jpg') center 42% / cover no-repeat;
 }
 .hero::before {
     content: "";
@@ -174,8 +174,8 @@ a:hover { color: var(--accent-lit); text-decoration: underline; }
     inset: 0;
     z-index: -1;
     background:
-        linear-gradient(105deg, rgba(5,7,15,0.94) 0%, rgba(5,7,15,0.80) 45%, rgba(5,7,15,0.58) 100%),
-        linear-gradient(to top, rgba(7,10,20,1) 0%, rgba(7,10,20,0) 55%);
+        linear-gradient(100deg, rgba(5,7,15,0.78) 0%, rgba(5,7,15,0.38) 46%, rgba(5,7,15,0.04) 100%),
+        linear-gradient(to top, rgba(7,10,20,0.94) 0%, rgba(7,10,20,0) 46%);
 }
 .hero-inner {
     padding-block: clamp(72px, 13vw, 128px);
@@ -426,14 +426,14 @@ h3 {
     line-height: 1.5;
     color: var(--text);
     margin: 0 0 6px;
-    max-width: var(--measure);
+    max-width: 78ch;
 }
 .pub-cite {
     font-size: 0.885rem;
     line-height: 1.6;
     color: var(--text-mute);
     margin: 0 0 10px;
-    max-width: var(--measure);
+    max-width: 84ch;
 }
 .pub-cite em { font-style: italic; color: var(--text-soft); }
 .pub-cite strong { font-weight: 600; color: var(--text-soft); }
@@ -676,6 +676,46 @@ footer a:hover { color: var(--accent); }
 
 /* ---------------- Responsive ---------------- */
 
+@media (min-width: 1040px) {
+    :root { --gutter: 48px; }
+
+    main .section {
+        display: grid;
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 0 72px;
+        padding-top: 0;
+        border-top: var(--rule);
+    }
+    main .section:first-of-type { border-top: none; }
+    main .section + .section { padding-top: 0; }
+
+    .section-head {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 12px;
+        position: sticky;
+        top: 108px;
+        align-self: start;
+        margin: 0;
+        padding: 66px 0 0;
+        border-bottom: none;
+    }
+    .section-head h2 {
+        flex: none;
+        font-size: 1.5rem;
+        line-height: 1.22;
+    }
+    .section-head .index { font-size: 0.7rem; }
+
+    .section-content { padding: 66px 0 74px; }
+
+    .about { grid-template-columns: 196px 1fr; gap: 46px; }
+    .skill-row { grid-template-columns: 168px 1fr; }
+    .closing-quote { margin-top: 74px; }
+}
+
 @media (max-width: 760px) {
     :root { --gutter: 22px; }
     .about { grid-template-columns: 1fr; gap: 26px; }
@@ -689,6 +729,12 @@ footer a:hover { color: var(--accent); }
     .nav-inner { padding-block: 12px; }
     .nav-links { width: 100%; gap: 2px 20px; }
     .nav-links a { font-size: 0.76rem; letter-spacing: 0.06em; }
+    .hero { background-position: 76% center; }
+    .hero::before {
+        background:
+            linear-gradient(118deg, rgba(5,7,15,0.74) 0%, rgba(5,7,15,0.48) 52%, rgba(5,7,15,0.20) 100%),
+            linear-gradient(to top, rgba(7,10,20,0.94) 0%, rgba(7,10,20,0) 38%);
+    }
     .section { padding-top: 56px; }
     .section + .section { padding-top: 58px; }
     footer { justify-content: center; text-align: center; }
@@ -738,7 +784,7 @@ footer a:hover { color: var(--accent); }
         <span class="eyebrow">Observational Cosmology</span>
         <h1>Animesh Sah</h1>
         <div class="hero-rule"></div>
-        <p class="tagline">Type&nbsp;Ia supernovae, cosmography, and the large-scale structure of the Universe.</p>
+        <p class="tagline">Type&nbsp;Ia supernovae, cosmography, and the large&#8209;scale structure of the Universe.</p>
         <div class="affiliation">
             <img src="images/tifr-logo-gradient-blue.png" alt="">
             <span>Tata Institute of Fundamental Research, Mumbai</span>
@@ -754,28 +800,30 @@ footer a:hover { color: var(--accent); }
         <span class="index">01</span>
     </div>
 
+    <div class="section-content">
     <div class="about">
-        <figure class="portrait">
-            <img src="images/Animesh_profile.jpeg" alt="Portrait of Animesh Sah">
-        </figure>
-        <div>
-            <p class="role-line"><strong>Ph.D. Candidate in Physics</strong><br>Department of Astronomy &amp; Astrophysics, TIFR</p>
-            <p class="lead">
-            I am a computational cosmologist at the Tata Institute of Fundamental Research,
-            working on model-independent tests of the standard cosmological model using
-            Type&nbsp;Ia supernovae and large-scale structure surveys.
-            </p>
-            <p>
-            My thesis work concerns the anisotropy of the local Universe: I have shown that
-            the Pantheon+ supernova compilation carries a significant dipolar signal in both
-            the expansion rate and the deceleration parameter, and that correcting these
-            supernovae for progenitor-age evolution changes the inferred expansion history.
-            </p>
-            <p>
-            I am a member of the <strong>LSST Dark Energy Science Collaboration (DESC)</strong>,
-            and I also build mock catalogues for the Fundamental Plane sample of the
-            DESI Legacy Imaging Surveys.
-            </p>
+            <figure class="portrait">
+                <img src="images/Animesh_profile.jpeg" alt="Portrait of Animesh Sah">
+            </figure>
+            <div>
+                <p class="role-line"><strong>Ph.D. Candidate in Physics</strong><br>Department of Astronomy &amp; Astrophysics, TIFR</p>
+                <p class="lead">
+                I am a computational cosmologist at the Tata Institute of Fundamental Research,
+                working on model-independent tests of the standard cosmological model using
+                Type&nbsp;Ia supernovae and large-scale structure surveys.
+                </p>
+                <p>
+                My thesis work concerns the anisotropy of the local Universe: I have shown that
+                the Pantheon+ supernova compilation carries a significant dipolar signal in both
+                the expansion rate and the deceleration parameter, and that correcting these
+                supernovae for progenitor-age evolution changes the inferred expansion history.
+                </p>
+                <p>
+                I am a member of the <strong>LSST Dark Energy Science Collaboration (DESC)</strong>,
+                and I also build mock catalogues for the Fundamental Plane sample of the
+                DESI Legacy Imaging Surveys.
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -786,57 +834,59 @@ footer a:hover { color: var(--accent); }
         <span class="index">02</span>
     </div>
 
+    <div class="section-content">
     <p class="research-intro">
-    Model-independent tests of the standard cosmological model; the impact of cosmic
-    anisotropies, inhomogeneities, and bulk flows on cosmological inference; peculiar
-    velocities; and the application of machine-learning methods to large-scale
-    structure analysis.
-    </p>
+        Model-independent tests of the standard cosmological model; the impact of cosmic
+        anisotropies, inhomogeneities, and bulk flows on cosmological inference; peculiar
+        velocities; and the application of machine-learning methods to large-scale
+        structure analysis.
+        </p>
 
-    <div class="tag-list" style="margin-bottom:10px">
-        <span class="tag">Type Ia Supernova Cosmology</span>
-        <span class="tag">Cosmic Anisotropy</span>
-        <span class="tag">Cosmography</span>
-        <span class="tag">Dark Energy</span>
-        <span class="tag">Peculiar Velocities</span>
-        <span class="tag">Bulk Flows</span>
-        <span class="tag">Inhomogeneous Cosmology</span>
-        <span class="tag">LSST DESC</span>
-        <span class="tag">Machine Learning for LSS</span>
-    </div>
-
-    <div class="project">
-        <div class="item-head">
-            <h3>Anisotropy and progenitor-age bias in the Pantheon+ supernova compilation</h3>
-            <span class="period">2023 &ndash; 2026</span>
+        <div class="tag-list" style="margin-bottom:10px">
+            <span class="tag">Type Ia Supernova Cosmology</span>
+            <span class="tag">Cosmic Anisotropy</span>
+            <span class="tag">Cosmography</span>
+            <span class="tag">Dark Energy</span>
+            <span class="tag">Peculiar Velocities</span>
+            <span class="tag">Bulk Flows</span>
+            <span class="tag">Inhomogeneous Cosmology</span>
+            <span class="tag">LSST DESC</span>
+            <span class="tag">Machine Learning for LSS</span>
         </div>
-        <p class="project-collab">with Dr.&nbsp;Mohamed Rameez (TIFR), Prof.&nbsp;Subir Sarkar (University of Oxford), and Prof.&nbsp;Christos Tsagas (Aristotle University of Thessaloniki)</p>
-        <ul>
-            <li>Detected a dipolar anisotropy in the Hubble expansion rate of the Pantheon+ Type&nbsp;Ia supernova catalogue exceeding 1.5&nbsp;km/s/Mpc &mdash; larger than the claimed 1% uncertainty of the SH0ES measurement &mdash; with the deceleration parameter showing dipolar modulation at 75&sigma; significance, using Maximum Likelihood Estimation across the heliocentric, CMB, and Local Group frames.</li>
-            <li>Showed that correcting for Type&nbsp;Ia supernova progenitor-age evolution shifts the monopole deceleration parameter to positive values, indicating that the isotropic expansion of the Universe is decelerating rather than accelerating.</li>
-        </ul>
-    </div>
 
-    <div class="project">
-        <div class="item-head">
-            <h3>Tests of tilted cosmology</h3>
-            <span class="period">2025 &ndash; Present</span>
+        <div class="project">
+            <div class="item-head">
+                <h3>Anisotropy and progenitor-age bias in the Pantheon+ supernova compilation</h3>
+                <span class="period">2023 &ndash; 2026</span>
+            </div>
+            <p class="project-collab">with Dr.&nbsp;Mohamed Rameez (TIFR), Prof.&nbsp;Subir Sarkar (University of Oxford), and Prof.&nbsp;Christos Tsagas (Aristotle University of Thessaloniki)</p>
+            <ul>
+                <li>Detected a dipolar anisotropy in the Hubble expansion rate of the Pantheon+ Type&nbsp;Ia supernova catalogue exceeding 1.5&nbsp;km/s/Mpc &mdash; larger than the claimed 1% uncertainty of the SH0ES measurement &mdash; with the deceleration parameter showing dipolar modulation at 75&sigma; significance, using Maximum Likelihood Estimation across the heliocentric, CMB, and Local Group frames.</li>
+                <li>Showed that correcting for Type&nbsp;Ia supernova progenitor-age evolution shifts the monopole deceleration parameter to positive values, indicating that the isotropic expansion of the Universe is decelerating rather than accelerating.</li>
+            </ul>
         </div>
-        <p class="project-collab">with Dr.&nbsp;Mohamed Rameez (TIFR)</p>
-        <ul>
-            <li>Leading development of a model-independent pipeline to test tilted &Lambda;CDM cosmologies against upcoming LSST supernova data, validated using realistic simulations from SNANA.</li>
-        </ul>
-    </div>
 
-    <div class="project">
-        <div class="item-head">
-            <h3>Mock catalogues for the DESI Fundamental Plane sample</h3>
-            <span class="period">2025 &ndash; Present</span>
+        <div class="project">
+            <div class="item-head">
+                <h3>Tests of tilted cosmology</h3>
+                <span class="period">2025 &ndash; Present</span>
+            </div>
+            <p class="project-collab">with Dr.&nbsp;Mohamed Rameez (TIFR)</p>
+            <ul>
+                <li>Leading development of a model-independent pipeline to test tilted &Lambda;CDM cosmologies against upcoming LSST supernova data, validated using realistic simulations from SNANA.</li>
+            </ul>
         </div>
-        <p class="project-collab">with Dr.&nbsp;Shadab Alam (TIFR)</p>
-        <ul>
-            <li>Building realistic mock catalogues for a photometric sample of ~480,000 early-type galaxies from the DESI Legacy Imaging Survey, using the AbacusSummit N-body simulation suite as the underlying dark-matter field.</li>
-        </ul>
+
+        <div class="project">
+            <div class="item-head">
+                <h3>Mock catalogues for the DESI Fundamental Plane sample</h3>
+                <span class="period">2025 &ndash; Present</span>
+            </div>
+            <p class="project-collab">with Dr.&nbsp;Shadab Alam (TIFR)</p>
+            <ul>
+                <li>Building realistic mock catalogues for a photometric sample of ~480,000 early-type galaxies from the DESI Legacy Imaging Survey, using the AbacusSummit N-body simulation suite as the underlying dark-matter field.</li>
+            </ul>
+        </div>
     </div>
 </section>
 
@@ -846,29 +896,31 @@ footer a:hover { color: var(--accent); }
         <span class="index">03</span>
     </div>
 
+    <div class="section-content">
     <div class="timeline">
-        <div class="timeline-item">
-            <div class="item-head">
-                <h3>Ph.D., Physics</h3>
-                <span class="period">2023 &ndash; Present &middot; expected early 2027</span>
+            <div class="timeline-item">
+                <div class="item-head">
+                    <h3>Ph.D., Physics</h3>
+                    <span class="period">2023 &ndash; Present &middot; expected early 2027</span>
+                </div>
+                <p class="item-sub">Tata Institute of Fundamental Research, Mumbai<span class="sep">/</span>Advisor: Dr.&nbsp;Mohamed Rameez</p>
             </div>
-            <p class="item-sub">Tata Institute of Fundamental Research, Mumbai<span class="sep">/</span>Advisor: Dr.&nbsp;Mohamed Rameez</p>
-        </div>
 
-        <div class="timeline-item">
-            <div class="item-head">
-                <h3>M.Sc., Physics</h3>
-                <span class="period">2020 &ndash; 2023</span>
+            <div class="timeline-item">
+                <div class="item-head">
+                    <h3>M.Sc., Physics</h3>
+                    <span class="period">2020 &ndash; 2023</span>
+                </div>
+                <p class="item-sub">Tata Institute of Fundamental Research, Mumbai<span class="sep">/</span>Integrated Ph.D. programme</p>
             </div>
-            <p class="item-sub">Tata Institute of Fundamental Research, Mumbai<span class="sep">/</span>Integrated Ph.D. programme</p>
-        </div>
 
-        <div class="timeline-item">
-            <div class="item-head">
-                <h3>B.Sc. (Honours), Physics</h3>
-                <span class="period">2017 &ndash; 2020</span>
+            <div class="timeline-item">
+                <div class="item-head">
+                    <h3>B.Sc. (Honours), Physics</h3>
+                    <span class="period">2017 &ndash; 2020</span>
+                </div>
+                <p class="item-sub">University of Delhi, India</p>
             </div>
-            <p class="item-sub">University of Delhi, India</p>
         </div>
     </div>
 </section>
@@ -879,46 +931,48 @@ footer a:hover { color: var(--accent); }
         <span class="index">04</span>
     </div>
 
+    <div class="section-content">
     <p>
-    A complete and up-to-date record is maintained on my
-    <a href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">INSPIRE-HEP</a> and
-    <a href="https://orcid.org/0000-0001-9541-916X" target="_blank" rel="noopener">ORCID</a> profiles.
-    </p>
+        A complete and up-to-date record is maintained on my
+        <a href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">INSPIRE-HEP</a> and
+        <a href="https://orcid.org/0000-0001-9541-916X" target="_blank" rel="noopener">ORCID</a> profiles.
+        </p>
 
-    <div class="pub">
-        <span class="pub-num">01</span>
-        <div>
-            <p class="pub-title">Pantheon+ supernovae corrected for progenitor age indicate the universe is decelerating</p>
-            <p class="pub-cite">A.&nbsp;Sah, M.&nbsp;Rameez &amp; S.&nbsp;Sarkar &middot; <em>Monthly Notices of the Royal Astronomical Society</em> <strong>549</strong>, stag844 (2026)</p>
-            <div class="pub-meta">
-                <span class="pub-tag is-journal">Journal</span>
-                <a href="https://academic.oup.com/mnras/article/549/3/stag844/8701424" target="_blank" rel="noopener">MNRAS</a>
-                <a href="https://arxiv.org/abs/2606.09650" target="_blank" rel="noopener">arXiv:2606.09650</a>
+        <div class="pub">
+            <span class="pub-num">01</span>
+            <div>
+                <p class="pub-title">Pantheon+ supernovae corrected for progenitor age indicate the universe is decelerating</p>
+                <p class="pub-cite">A.&nbsp;Sah, M.&nbsp;Rameez &amp; S.&nbsp;Sarkar &middot; <em>Monthly Notices of the Royal Astronomical Society</em> <strong>549</strong>, stag844 (2026)</p>
+                <div class="pub-meta">
+                    <span class="pub-tag is-journal">Journal</span>
+                    <a href="https://academic.oup.com/mnras/article/549/3/stag844/8701424" target="_blank" rel="noopener">MNRAS</a>
+                    <a href="https://arxiv.org/abs/2606.09650" target="_blank" rel="noopener">arXiv:2606.09650</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="pub">
-        <span class="pub-num">02</span>
-        <div>
-            <p class="pub-title">Anisotropy in Pantheon+ supernovae</p>
-            <p class="pub-cite">A.&nbsp;Sah, M.&nbsp;Rameez, S.&nbsp;Sarkar &amp; C.&nbsp;G.&nbsp;Tsagas &middot; <em>European Physical Journal C</em> <strong>85</strong>, 596 (2025)</p>
-            <div class="pub-meta">
-                <span class="pub-tag is-journal">Journal</span>
-                <a href="https://link.springer.com/article/10.1140/epjc/s10052-025-14222-w" target="_blank" rel="noopener">EPJ&nbsp;C</a>
-                <a href="https://arxiv.org/abs/2411.10838" target="_blank" rel="noopener">arXiv:2411.10838</a>
+        <div class="pub">
+            <span class="pub-num">02</span>
+            <div>
+                <p class="pub-title">Anisotropy in Pantheon+ supernovae</p>
+                <p class="pub-cite">A.&nbsp;Sah, M.&nbsp;Rameez, S.&nbsp;Sarkar &amp; C.&nbsp;G.&nbsp;Tsagas &middot; <em>European Physical Journal C</em> <strong>85</strong>, 596 (2025)</p>
+                <div class="pub-meta">
+                    <span class="pub-tag is-journal">Journal</span>
+                    <a href="https://link.springer.com/article/10.1140/epjc/s10052-025-14222-w" target="_blank" rel="noopener">EPJ&nbsp;C</a>
+                    <a href="https://arxiv.org/abs/2411.10838" target="_blank" rel="noopener">arXiv:2411.10838</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="pub">
-        <span class="pub-num">03</span>
-        <div>
-            <p class="pub-title">Examining the cosmic anisotropy with the Pantheon+ supernovae</p>
-            <p class="pub-cite">A.&nbsp;Sah &middot; <em>Springer Proceedings in Physics</em> <strong>937</strong>, 284&ndash;287 (2025) &middot; Proceedings of the XXVI DAE-BRNS High Energy Physics Symposium 2024</p>
-            <div class="pub-meta">
-                <span class="pub-tag">Proceedings</span>
-                <a href="https://link.springer.com/chapter/10.1007/978-981-95-1513-4_64" target="_blank" rel="noopener">Springer</a>
+        <div class="pub">
+            <span class="pub-num">03</span>
+            <div>
+                <p class="pub-title">Examining the cosmic anisotropy with the Pantheon+ supernovae</p>
+                <p class="pub-cite">A.&nbsp;Sah &middot; <em>Springer Proceedings in Physics</em> <strong>937</strong>, 284&ndash;287 (2025) &middot; Proceedings of the XXVI DAE-BRNS High Energy Physics Symposium 2024</p>
+                <div class="pub-meta">
+                    <span class="pub-tag">Proceedings</span>
+                    <a href="https://link.springer.com/chapter/10.1007/978-981-95-1513-4_64" target="_blank" rel="noopener">Springer</a>
+                </div>
             </div>
         </div>
     </div>
@@ -930,74 +984,76 @@ footer a:hover { color: var(--accent); }
         <span class="index">05</span>
     </div>
 
+    <div class="section-content">
     <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">The Concurrence of Mega-Surveys</span>
-            <p class="entry-desc">Flash talk (programme participant &mdash; see Schools &amp; Workshops).</p>
+            <div class="entry-main">
+                <span class="entry-title">The Concurrence of Mega-Surveys</span>
+                <p class="entry-desc">Flash talk (programme participant &mdash; see Schools &amp; Workshops).</p>
+            </div>
+            <span class="entry-venue">ICTS, Bengaluru<span class="date">Aug 2026</span></span>
         </div>
-        <span class="entry-venue">ICTS, Bengaluru<span class="date">Aug 2026</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Supernova Cosmology: New Challenges and Opportunities</span>
-            <p class="entry-desc">Contributed talk on Pantheon+ anisotropy and progenitor-age systematics.</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Supernova Cosmology: New Challenges and Opportunities</span>
+                <p class="entry-desc">Contributed talk on Pantheon+ anisotropy and progenitor-age systematics.</p>
+            </div>
+            <span class="entry-venue">Yonsei University, Seoul<span class="date">Jun 2026</span></span>
         </div>
-        <span class="entry-venue">Yonsei University, Seoul<span class="date">Jun 2026</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Cosmic Lighthouses: Astrophysical and Cosmological Challenges with Type Ia Supernovae</span>
-            <p class="entry-desc">Contributed talk on Pantheon+ anisotropy.</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Cosmic Lighthouses: Astrophysical and Cosmological Challenges with Type Ia Supernovae</span>
+                <p class="entry-desc">Contributed talk on Pantheon+ anisotropy.</p>
+            </div>
+            <span class="entry-venue">Kavli Institute for Cosmology, Cambridge<span class="date">Jul 2025</span></span>
         </div>
-        <span class="entry-venue">Kavli Institute for Cosmology, Cambridge<span class="date">Jul 2025</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">5th EuCAPT Annual Symposium</span>
-            <p class="entry-desc">Talk on anisotropy in Pantheon+ supernovae. &middot; <a href="https://indico.cern.ch/event/1515773/contributions/6467823/" target="_blank" rel="noopener">Programme</a></p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">5th EuCAPT Annual Symposium</span>
+                <p class="entry-desc">Talk on anisotropy in Pantheon+ supernovae. &middot; <a href="https://indico.cern.ch/event/1515773/contributions/6467823/" target="_blank" rel="noopener">Programme</a></p>
+            </div>
+            <span class="entry-venue">Online<span class="date">May 2025</span></span>
         </div>
-        <span class="entry-venue">Online<span class="date">May 2025</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Pune&ndash;Mumbai Cosmology and Astro-Particle Meeting &mdash; Chapter 4</span>
-            <p class="entry-desc">Contributed talk on anisotropy in Pantheon+.</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Pune&ndash;Mumbai Cosmology and Astro-Particle Meeting &mdash; Chapter 4</span>
+                <p class="entry-desc">Contributed talk on anisotropy in Pantheon+.</p>
+            </div>
+            <span class="entry-venue">IIT Bombay<span class="date">Feb 2025</span></span>
         </div>
-        <span class="entry-venue">IIT Bombay<span class="date">Feb 2025</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">XXVI DAE-BRNS High Energy Physics Symposium 2024</span>
-            <p class="entry-desc">Contributed talk on cosmic anisotropy with Pantheon+.</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">XXVI DAE-BRNS High Energy Physics Symposium 2024</span>
+                <p class="entry-desc">Contributed talk on cosmic anisotropy with Pantheon+.</p>
+            </div>
+            <span class="entry-venue">Banaras Hindu University, Varanasi<span class="date">Dec 2024</span></span>
         </div>
-        <span class="entry-venue">Banaras Hindu University, Varanasi<span class="date">Dec 2024</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">A Multipolar Universe?</span>
-            <p class="entry-desc"><strong>Invited talk</strong> on Pantheon+ anisotropy.</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">A Multipolar Universe?</span>
+                <p class="entry-desc"><strong>Invited talk</strong> on Pantheon+ anisotropy.</p>
+            </div>
+            <span class="entry-venue">Aristotle University of Thessaloniki<span class="date">Sept 2023</span></span>
         </div>
-        <span class="entry-venue">Aristotle University of Thessaloniki<span class="date">Sept 2023</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Less Travelled Path to the Dark Universe</span>
-            <p class="entry-desc">Talk on cosmological analysis with the Pantheon+ compilation. &middot; <a href="https://www.youtube.com/watch?v=llq0L7GAI98&amp;t=1162s" target="_blank" rel="noopener">Recording</a></p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Less Travelled Path to the Dark Universe</span>
+                <p class="entry-desc">Talk on cosmological analysis with the Pantheon+ compilation. &middot; <a href="https://www.youtube.com/watch?v=llq0L7GAI98&amp;t=1162s" target="_blank" rel="noopener">Recording</a></p>
+            </div>
+            <span class="entry-venue">ICTS, Bengaluru<span class="date">Mar 2023</span></span>
         </div>
-        <span class="entry-venue">ICTS, Bengaluru<span class="date">Mar 2023</span></span>
-    </div>
 
-    <figure class="feature-photo">
-        <img src="images/talk1.jpg" alt="Animesh Sah presenting at a conference">
-        <figcaption>Presenting work on anisotropy in the Pantheon+ supernova compilation.</figcaption>
-    </figure>
+        <figure class="feature-photo">
+            <img src="images/talk1.jpg" alt="Animesh Sah presenting at a conference">
+            <figcaption>Presenting work on anisotropy in the Pantheon+ supernova compilation.</figcaption>
+        </figure>
+    </div>
 </section>
 
 <section id="workshops" class="section reveal">
@@ -1006,35 +1062,37 @@ footer a:hover { color: var(--accent); }
         <span class="index">06</span>
     </div>
 
+    <div class="section-content">
     <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">The Concurrence of Mega-Surveys</span>
-            <p class="entry-desc">Project: reimplemented and trained a transformer-based decoder (GOTHAM) to accelerate halo catalogue generation from particle-mesh simulations via distributed multi-GPU training. Also presented a flash talk.</p>
+            <div class="entry-main">
+                <span class="entry-title">The Concurrence of Mega-Surveys</span>
+                <p class="entry-desc">Project: reimplemented and trained a transformer-based decoder (GOTHAM) to accelerate halo catalogue generation from particle-mesh simulations via distributed multi-GPU training. Also presented a flash talk.</p>
+            </div>
+            <span class="entry-venue">ICTS, Bengaluru<span class="date">Jul&ndash;Aug 2026</span></span>
         </div>
-        <span class="entry-venue">ICTS, Bengaluru<span class="date">Jul&ndash;Aug 2026</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Rethinking Cosmology</span>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Rethinking Cosmology</span>
+            </div>
+            <span class="entry-venue">Raman Research Institute, Bengaluru<span class="date">Dec 2025</span></span>
         </div>
-        <span class="entry-venue">Raman Research Institute, Bengaluru<span class="date">Dec 2025</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Pune&ndash;Mumbai Cosmology and Astro-Particle Meeting</span>
-            <p class="entry-desc">Chapters 3, 5, and 7. (Chapter 4 listed under Talks.)</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Pune&ndash;Mumbai Cosmology and Astro-Particle Meeting</span>
+                <p class="entry-desc">Chapters 3, 5, and 7. (Chapter 4 listed under Talks.)</p>
+            </div>
+            <span class="entry-venue">TIFR, Mumbai &middot; IISER, Pune<span class="date">2024&ndash;2026</span></span>
         </div>
-        <span class="entry-venue">TIFR, Mumbai &middot; IISER, Pune<span class="date">2024&ndash;2026</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Largest Cosmological Surveys and Big Data Science</span>
-            <p class="entry-desc">Project: reanalysed Dark Energy Survey cosmic-shear measurements using machine-learning techniques.</p>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Largest Cosmological Surveys and Big Data Science</span>
+                <p class="entry-desc">Project: reanalysed Dark Energy Survey cosmic-shear measurements using machine-learning techniques.</p>
+            </div>
+            <span class="entry-venue">ICTS, Bengaluru<span class="date">May 2023</span></span>
         </div>
-        <span class="entry-venue">ICTS, Bengaluru<span class="date">May 2023</span></span>
     </div>
 </section>
 
@@ -1044,67 +1102,69 @@ footer a:hover { color: var(--accent); }
         <span class="index">07</span>
     </div>
 
+    <div class="section-content">
     <div class="skill-row">
-        <h3>Statistical Methods</h3>
-        <div class="tag-list">
-            <span class="tag">Frequentist &amp; Bayesian Inference</span>
-            <span class="tag">Maximum Likelihood Estimation</span>
-            <span class="tag">MCMC</span>
-            <span class="tag">HMC (emcee, NumPyro)</span>
+            <h3>Statistical Methods</h3>
+            <div class="tag-list">
+                <span class="tag">Frequentist &amp; Bayesian Inference</span>
+                <span class="tag">Maximum Likelihood Estimation</span>
+                <span class="tag">MCMC</span>
+                <span class="tag">HMC (emcee, NumPyro)</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-row">
-        <h3>Programming</h3>
-        <div class="tag-list">
-            <span class="tag">Python (NumPy, SciPy, Astropy, Pandas, JAX)</span>
-            <span class="tag">C++</span>
-            <span class="tag">Mathematica</span>
+        <div class="skill-row">
+            <h3>Programming</h3>
+            <div class="tag-list">
+                <span class="tag">Python (NumPy, SciPy, Astropy, Pandas, JAX)</span>
+                <span class="tag">C++</span>
+                <span class="tag">Mathematica</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-row">
-        <h3>Machine Learning</h3>
-        <div class="tag-list">
-            <span class="tag">PyTorch</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">scikit-learn</span>
-            <span class="tag">XGBoost &amp; CatBoost</span>
-            <span class="tag">Transformers</span>
-            <span class="tag">CNNs</span>
-            <span class="tag">Distributed multi-GPU training</span>
+        <div class="skill-row">
+            <h3>Machine Learning</h3>
+            <div class="tag-list">
+                <span class="tag">PyTorch</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">scikit-learn</span>
+                <span class="tag">XGBoost &amp; CatBoost</span>
+                <span class="tag">Transformers</span>
+                <span class="tag">CNNs</span>
+                <span class="tag">Distributed multi-GPU training</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-row">
-        <h3>High-Performance Computing</h3>
-        <div class="tag-list">
-            <span class="tag">HTCondor</span>
-            <span class="tag">SLURM</span>
-            <span class="tag">PBS</span>
-            <span class="tag">NERSC</span>
-            <span class="tag">GPU-accelerated computing</span>
+        <div class="skill-row">
+            <h3>High-Performance Computing</h3>
+            <div class="tag-list">
+                <span class="tag">HTCondor</span>
+                <span class="tag">SLURM</span>
+                <span class="tag">PBS</span>
+                <span class="tag">NERSC</span>
+                <span class="tag">GPU-accelerated computing</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-row">
-        <h3>Cosmology Software</h3>
-        <div class="tag-list">
-            <span class="tag">SNANA</span>
-            <span class="tag">PIPPIN</span>
-            <span class="tag">SALT2 / SALT3</span>
-            <span class="tag">TreeCorr</span>
-            <span class="tag">HEALPix</span>
+        <div class="skill-row">
+            <h3>Cosmology Software</h3>
+            <div class="tag-list">
+                <span class="tag">SNANA</span>
+                <span class="tag">PIPPIN</span>
+                <span class="tag">SALT2 / SALT3</span>
+                <span class="tag">TreeCorr</span>
+                <span class="tag">HEALPix</span>
+            </div>
         </div>
-    </div>
 
-    <div class="skill-row">
-        <h3>Data &amp; Tools</h3>
-        <div class="tag-list">
-            <span class="tag">Large-scale FITS / HDF5</span>
-            <span class="tag">Git / GitHub</span>
-            <span class="tag">Jupyter</span>
-            <span class="tag">LaTeX</span>
+        <div class="skill-row">
+            <h3>Data &amp; Tools</h3>
+            <div class="tag-list">
+                <span class="tag">Large-scale FITS / HDF5</span>
+                <span class="tag">Git / GitHub</span>
+                <span class="tag">Jupyter</span>
+                <span class="tag">LaTeX</span>
+            </div>
         </div>
     </div>
 </section>
@@ -1115,25 +1175,27 @@ footer a:hover { color: var(--accent); }
         <span class="index">08</span>
     </div>
 
+    <div class="section-content">
     <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Qualified the TIFR Graduate School (GS) Admission Test and interview in Physics</span>
+            <div class="entry-main">
+                <span class="entry-title">Qualified the TIFR Graduate School (GS) Admission Test and interview in Physics</span>
+            </div>
+            <span class="entry-venue"><span class="date">2020</span></span>
         </div>
-        <span class="entry-venue"><span class="date">2020</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Qualified the Joint Admission Test for M.Sc. (IIT JAM) in Physics</span>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Qualified the Joint Admission Test for M.Sc. (IIT JAM) in Physics</span>
+            </div>
+            <span class="entry-venue"><span class="date">2020</span></span>
         </div>
-        <span class="entry-venue"><span class="date">2020</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Shortlisted for interview at ICTS (via TIFR GS score) for the Integrated Ph.D. in Physics</span>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Shortlisted for interview at ICTS (via TIFR GS score) for the Integrated Ph.D. in Physics</span>
+            </div>
+            <span class="entry-venue"><span class="date">2020</span></span>
         </div>
-        <span class="entry-venue"><span class="date">2020</span></span>
     </div>
 </section>
 
@@ -1143,25 +1205,27 @@ footer a:hover { color: var(--accent); }
         <span class="index">09</span>
     </div>
 
+    <div class="section-content">
     <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Organizing Committee Member, Young Astronomers&rsquo; Meet (YAM 2025)</span>
-            <p class="entry-desc">Meeting supported by the Astronomical Society of India for early-career researchers in astronomy, astrophysics, and cosmology.</p>
+            <div class="entry-main">
+                <span class="entry-title">Organizing Committee Member, Young Astronomers&rsquo; Meet (YAM 2025)</span>
+                <p class="entry-desc">Meeting supported by the Astronomical Society of India for early-career researchers in astronomy, astrophysics, and cosmology.</p>
+            </div>
+            <span class="entry-venue">TIFR, Mumbai<span class="date">Mar 2025</span></span>
         </div>
-        <span class="entry-venue">TIFR, Mumbai<span class="date">Mar 2025</span></span>
-    </div>
 
-    <div class="entry">
-        <div class="entry-main">
-            <span class="entry-title">Volunteer, Public Outreach Events</span>
+        <div class="entry">
+            <div class="entry-main">
+                <span class="entry-title">Volunteer, Public Outreach Events</span>
+            </div>
+            <span class="entry-venue">TIFR, Mumbai</span>
         </div>
-        <span class="entry-venue">TIFR, Mumbai</span>
-    </div>
 
-    <div class="skill-row" style="border-bottom:none;padding-top:26px">
-        <h3>Professional Memberships</h3>
-        <div class="tag-list">
-            <span class="tag">LSST Dark Energy Science Collaboration (DESC)</span>
+        <div class="skill-row" style="border-bottom:none;padding-top:26px">
+            <h3>Professional Memberships</h3>
+            <div class="tag-list">
+                <span class="tag">LSST Dark Energy Science Collaboration (DESC)</span>
+            </div>
         </div>
     </div>
 </section>
@@ -1171,17 +1235,19 @@ footer a:hover { color: var(--accent); }
         <h2>Beyond Physics</h2>
         <span class="index">10</span>
     </div>
+    <div class="section-content">
     <p>
-    When I am not thinking about supernovae, I am usually training calisthenics,
-    out for a run, sketching, or on a trek somewhere. I am also an anime fan &mdash;
-    always happy to trade recommendations.
-    </p>
-    <div class="tag-list">
-        <span class="tag">Calisthenics</span>
-        <span class="tag">Running</span>
-        <span class="tag">Sketching</span>
-        <span class="tag">Trekking</span>
-        <span class="tag">Anime</span>
+        When I am not at the office, I am usually training calisthenics,
+        out for a run, sketching, or on a trek somewhere. I am also an anime fan, and
+        always happy to trade recommendations.
+        </p>
+        <div class="tag-list">
+            <span class="tag">Calisthenics</span>
+            <span class="tag">Running</span>
+            <span class="tag">Sketching</span>
+            <span class="tag">Trekking</span>
+            <span class="tag">Anime</span>
+        </div>
     </div>
 </section>
 
@@ -1191,42 +1257,44 @@ footer a:hover { color: var(--accent); }
         <span class="index">11</span>
     </div>
 
+    <div class="section-content">
     <div class="contact-grid">
-        <div>
-            <div class="contact-label">Email</div>
-            <div class="contact-value"><a href="mailto:animesh.sah@tifr.res.in">animesh.sah@tifr.res.in</a></div>
-        </div>
-        <div>
-            <div class="contact-label">Address</div>
-            <div class="contact-value">
-                Department of Astronomy &amp; Astrophysics<br>
-                Tata Institute of Fundamental Research<br>
-                Homi Bhabha Road, Mumbai 400005, India
+            <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value"><a href="mailto:animesh.sah@tifr.res.in">animesh.sah@tifr.res.in</a></div>
+            </div>
+            <div>
+                <div class="contact-label">Address</div>
+                <div class="contact-value">
+                    Department of Astronomy &amp; Astrophysics<br>
+                    Tata Institute of Fundamental Research<br>
+                    Homi Bhabha Road, Mumbai 400005, India
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="links" style="margin-top:34px">
-        <a class="btn is-primary" href="CV_animesh.pdf" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Curriculum Vitae
-        </a>
-        <a class="btn" href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            INSPIRE-HEP
-        </a>
-        <a class="btn" href="https://orcid.org/0000-0001-9541-916X" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="8.01"/><line x1="12" y1="11" x2="12" y2="16"/></svg>
-            ORCID
-        </a>
-        <a class="btn" href="https://github.com/Shin107" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            GitHub
-        </a>
-        <a class="btn" href="https://www.linkedin.com/in/animesh-sah-5585b2171" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-        </a>
+        <div class="links" style="margin-top:34px">
+            <a class="btn is-primary" href="CV_animesh.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Curriculum Vitae
+            </a>
+            <a class="btn" href="https://inspirehep.net/authors/2931648" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                INSPIRE-HEP
+            </a>
+            <a class="btn" href="https://orcid.org/0000-0001-9541-916X" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="8.01"/><line x1="12" y1="11" x2="12" y2="16"/></svg>
+                ORCID
+            </a>
+            <a class="btn" href="https://github.com/Shin107" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/animesh-sah-5585b2171" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+            </a>
+        </div>
     </div>
 </section>
 
